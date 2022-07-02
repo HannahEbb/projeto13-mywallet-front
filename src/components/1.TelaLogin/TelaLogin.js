@@ -11,7 +11,7 @@ export default function TelaLogin () {
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-    const { setToken } = useContext(UserContext);
+    const { setToken  } = useContext(UserContext);
 
      const navigate = useNavigate();
 
@@ -27,9 +27,10 @@ export default function TelaLogin () {
          promise.then(res => {
              setToken(res.data);
              console.log(res.data);
-             {res.data ? navigate('/home') : alert("Dados incorretos! Preencha os campos novamente ou cadastre-se primeiro.") }}); 
+             navigate('/home')});
              promise.catch(err => {
-                 console.log(err) });
+                console.log(err);
+                alert("Dados incorretos! Preencha os campos novamente ou cadastre-se primeiro.")});
         }
 
 
