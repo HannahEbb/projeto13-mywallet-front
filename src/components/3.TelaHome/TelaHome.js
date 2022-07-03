@@ -14,7 +14,7 @@ import minus from "../../assets/minus.png";
 
 export default function TelaHome() {
 
-    const { nome, token } = useContext(UserContext);
+    const { nome, token, saldo, setSaldo } = useContext(UserContext);
     const [transacoes, setTransacoes] = useState([]);
 
     useEffect(() => {
@@ -29,10 +29,11 @@ export default function TelaHome() {
         
         const promise = axios.get(URL, config);
         promise.then((response) => {
-            const dados = response.data;
-            console.log(dados);
+            const dados = response.data.transacoes;
+            console.log(response);
             if(dados.length !==0) {
                 setTransacoes([...dados]);
+                setSaldo(response.data.saldo);
             }
         })
 
@@ -53,7 +54,7 @@ export default function TelaHome() {
                                                                 type={transacao.type}
                                                                 entry={transacao.entry}/>})
             : <p>Não há registros de entrada ou saída</p>}
-            {transacoes.length ? <Saldo arrayTransacoes={transacoes}/> : ""}
+            {transacoes.length ? <Saldo saldo={saldo}/> : ""}
         </Transacoes>
         <Rotas>
             <Link style={{textDecoration: 'none'}} to='/deposits'>

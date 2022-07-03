@@ -13,10 +13,12 @@ export default function App() {
 
     const [token, setToken] = useState("");
     const [nome, setNome] = useState("");
+    const [saldo, setSaldo] = useState("");
     
 
     const contextValue = { token, setToken,
-                            nome, setNome };
+                            nome, setNome,
+                            saldo, setSaldo };
 
     return (
 
