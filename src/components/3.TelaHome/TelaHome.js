@@ -44,25 +44,29 @@ export default function TelaHome() {
         <Container>
         <Header>
            <div><h1>Olá, { nome }</h1></div>
-           <div><img src={ sair } width="23px" height="24px"/></div>
+           <Link to='/'><div><img src={ sair } width="23px" height="24px"/></div></Link>
         </Header>
         <Transacoes>
-            {transacoes ? transacoes.map( transacao => { return <Transacao key={transacao._id}
+            {transacoes.length ? transacoes.map( transacao => { return <Transacao key={transacao._id}
                                                                 date={transacao.date} 
                                                                 description={transacao.description} 
                                                                 type={transacao.type}
                                                                 entry={transacao.entry}/> })
-            : "Não há registros de entrada ou saída"}
+            : <p>Não há registros de entrada ou saída</p>}
         </Transacoes>
         <Rotas>
-            <div>
-                <img src={plus} />
-                <p>Nova entrada</p>
-            </div>
-            <div>
-                <img src={minus} />
-                <p>Nova saída</p>
-            </div>
+            <Link style={{textDecoration: 'none'}} to='/deposits'>
+                <div>
+                    <img src={plus} />
+                    <p>Nova entrada</p>
+                </div>
+            </Link>
+            <Link style={{textDecoration: 'none'}} to='/outflow'>
+                <div>
+                    <img src={minus} />
+                    <p>Nova saída</p>
+                </div>
+            </Link>
         </Rotas>
 
         </Container>
@@ -111,11 +115,13 @@ const Container = styled.div`
 const Header = styled.div`
 
     width: 326px;
-    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    h1 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+    }
 `
 
 const Transacoes = styled.div`
@@ -149,6 +155,15 @@ const Transacoes = styled.div`
         font-weight: 400;
         color: #000000;
        }
+       p {
+        color: #868686;
+        text-size: 20px;
+        font-weight: 400;
+        text-align: center;
+        padding-left: 73px;
+        padding-right: 73px;
+        padding-top: 180px;
+       }
 `
 
 const Rotas = styled.div`
@@ -160,11 +175,13 @@ div {
     width: 155px;
     height: 114px;
     background: var(--cor-roxo-claro);
+    color: var(--cor-branco);
     padding-left: 10px;
     padding-top:10px;
     diplay: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: 10px;
 }
 
 p{
