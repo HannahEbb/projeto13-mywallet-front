@@ -7,6 +7,7 @@ import axios from "axios";
 import styled from 'styled-components';
 import sair from "../../assets/Vector.png"; 
 import Transacao from './Transacao';
+import Saldo from './Saldo';
 import plus from "../../assets/plus.png";
 import minus from "../../assets/minus.png";
 
@@ -15,7 +16,6 @@ export default function TelaHome() {
 
     const { nome, token } = useContext(UserContext);
     const [transacoes, setTransacoes] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
     
@@ -51,8 +51,9 @@ export default function TelaHome() {
                                                                 date={transacao.date} 
                                                                 description={transacao.description} 
                                                                 type={transacao.type}
-                                                                entry={transacao.entry}/> })
+                                                                entry={transacao.entry}/>})
             : <p>Não há registros de entrada ou saída</p>}
+            {transacoes.length ? <Saldo arrayTransacoes={transacoes}/> : ""}
         </Transacoes>
         <Rotas>
             <Link style={{textDecoration: 'none'}} to='/deposits'>
@@ -135,6 +136,12 @@ const Transacoes = styled.div`
         display: flex;
         justify-content: space-between;
         padding-bottom: 20px;
+    }
+    h1 {
+        font-family: 'Raleway', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--cor-preto);
     }
    
     h4 {
