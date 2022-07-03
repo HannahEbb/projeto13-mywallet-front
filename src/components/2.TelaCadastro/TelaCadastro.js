@@ -8,7 +8,8 @@ import styled from 'styled-components';
 
 export default function TelaCadastro () {
 
-    const { nome, setNome } = useContext(UserContext);
+    //const { nome, setNome } = useContext(UserContext);
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [confirmaSenha, setConfirmaSenha] = useState("");
@@ -20,7 +21,7 @@ export default function TelaCadastro () {
          event.preventDefault();
         
          const signup = {
-             name: nome,
+             name: name,
              email: email,
              password: senha,
              confirm: confirmaSenha
@@ -40,7 +41,7 @@ export default function TelaCadastro () {
         <Container>
         <h1>MyWallet</h1>
         <form onSubmit={fazerCadastro}>
-        <input type="text" value={nome} onChange={e => setNome(e.target.value)} placeholder="Nome"></input>
+        <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Nome"></input>
             <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="E-mail"></input>
             <input type="password" value={senha} onChange={e => setSenha(e.target.value)} placeholder="Senha"></input>
             <input type="password" value={confirmaSenha} onChange={e => setConfirmaSenha(e.target.value)} placeholder="Confirme a senha"></input>

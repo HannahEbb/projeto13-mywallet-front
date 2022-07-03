@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import UserContext from "../../UserContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from 'styled-components';
 import sair from "../../assets/Vector.png"; 
@@ -133,6 +133,7 @@ const Transacoes = styled.div`
     padding-left: 12px;
     padding-right: 12px;
     padding-top: 23px;
+    overflow: scroll;
     div {
         display: flex;
         justify-content: space-between;
