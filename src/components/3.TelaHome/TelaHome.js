@@ -19,7 +19,7 @@ export default function TelaHome() {
 
     useEffect(() => {
     
-        const URL = 'http://localhost:5000/transacoes';
+        const URL = 'https://proejto13-my-wallet-back.herokuapp.com/transacoes';
 
         const config = {
             headers: {

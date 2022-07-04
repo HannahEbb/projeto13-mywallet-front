@@ -30,7 +30,7 @@ export default function TelaEntradas() {
             }
         }
        
-        const promise = axios.post('http://localhost:5000/transacoes', entrada, config);
+        const promise = axios.post('https://proejto13-my-wallet-back.herokuapp.com/transacoes', entrada, config);
         promise.then(res => {
             console.log(res);
             navigate('/home')});

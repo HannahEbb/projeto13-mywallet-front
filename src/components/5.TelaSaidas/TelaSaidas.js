@@ -30,7 +30,7 @@ export default function TelaSaidas() {
             }
         }
        
-        const promise = axios.post('http://localhost:5000/transacoes', saida, config);
+        const promise = axios.post('https://proejto13-my-wallet-back.herokuapp.com/transacoes', saida, config);
         promise.then(res => {
             console.log(res);
             navigate('/home')});

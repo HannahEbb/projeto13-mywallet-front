@@ -23,7 +23,7 @@ export default function TelaLogin () {
              password: senha
          }
         
-         const promise = axios.post('http://localhost:5000/login', login);
+         const promise = axios.post('https://proejto13-my-wallet-back.herokuapp.com/login', login);
          promise.then(res => {
              setToken(res.data.token);
              setNome(res.data.nome);

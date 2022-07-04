@@ -24,7 +24,7 @@ export default function TelaCadastro () {
              confirm: confirmaSenha
          }
         
-         const promise = axios.post('http://localhost:5000/cadastro', signup);
+         const promise = axios.post('https://proejto13-my-wallet-back.herokuapp.com/cadastro', signup);
             promise.then(res => {
                 console.log(res.data);
                 navigate('/')}); 
