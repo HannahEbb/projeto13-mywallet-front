@@ -40,7 +40,6 @@ export default function TelaHome() {
     }, []);
 
 
-
     return (
         <Container>
         <Header>
@@ -70,7 +69,6 @@ export default function TelaHome() {
                 </div>
             </Link>
         </Rotas>
-
         </Container>
     )
 };
@@ -176,25 +174,25 @@ const Transacoes = styled.div`
 `
 
 const Rotas = styled.div`
-width: 326px;
-display: flex;
-justify-content: space-between;
+    width: 326px;
+    display: flex;
+    justify-content: space-between;
 
-div {
-    width: 155px;
-    height: 114px;
-    background: var(--cor-roxo-claro);
-    color: var(--cor-branco);
-    padding-left: 10px;
-    padding-top:10px;
-    diplay: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 10px;
-}
+    div {
+        width: 155px;
+        height: 114px;
+        background: var(--cor-roxo-claro);
+        color: var(--cor-branco);
+        padding-left: 10px;
+        padding-top:10px;
+        diplay: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 10px;
+    }
 
-p{
-    margin-top: 30px;
-}
+    p {
+        margin-top: 30px;
+    }
 
 `

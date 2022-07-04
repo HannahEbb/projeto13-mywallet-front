@@ -1,14 +1,11 @@
 import React from 'react';
 import { useState } from "react";
-import { useContext } from "react";
-import UserContext from "../../UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from 'styled-components';
 
 export default function TelaCadastro () {
 
-    //const { nome, setNome } = useContext(UserContext);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");

@@ -1,9 +1,5 @@
-import React, { useState } from 'react';
-
 
 export default function Saldo ({saldo}) {
-
-    const [soma, setSoma] = useState(0);
 
     return(
         <div>
